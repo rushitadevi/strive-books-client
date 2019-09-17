@@ -13,7 +13,7 @@ class mainpage extends Component {
             <Router>
               <RoutedNavigation/>
               <Route path="/" exact component={Home} />
-              <Route  path="/SingleBook/:bookId" component={SingleBook}/>
+              <Route  path="/SingleBook/:asin" component={SingleBook}/>
               </Router>
           );
     }

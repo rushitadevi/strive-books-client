@@ -6,9 +6,10 @@ import SingleBook from "./SingleBook";
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = ({
       books: []
-    };
+    });
+
   }
 
   componentDidMount = async () => {
@@ -32,11 +33,10 @@ class Home extends React.Component {
                 this.state.books.map((b, id) => (
                     <div className="col-md-3">
                   <div key={id} className="card" style={{ maxWidth: "18rem" }}>
-                  <Link to={ "/SingleBook/" + b.bookId } >                    
-                    <CardImg top src={b.img}
+                  <Link to={ "/SingleBook/" + b.asin } key= {b.asin} >                    
+                    <CardImg top src={b.img} className="img-fluid"
                                     alt="Card image cap" 
-                                    style={{ cursor: "pointer", width: "150px", height: "150px" }}
-                                    />
+                                    style={{ cursor: "pointer" }} />
                                    </Link>
                     <div className="card-body">
                       <p className="card-text">
